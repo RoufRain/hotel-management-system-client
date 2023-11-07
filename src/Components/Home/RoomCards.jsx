@@ -18,9 +18,11 @@ const RoomCards = ({ rooms }) => {
           $Price : {price_per_night}
         </p>
 
-        <button className="bg-[#FF3811] font-semibold w-30 rounded-md p-2">
-          See Details...
-        </button>
+        <Link to={`/roomDetails/${_id}`}>
+          <button className="bg-[#FF3811] font-semibold w-30 rounded-md p-2">
+            See Details...
+          </button>
+        </Link>
       </div>
     </div>
   );
