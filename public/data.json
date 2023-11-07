@@ -1,56 +1,63 @@
 [
   {
     "id": "01",
-    "title": "Engine Oil Change",
-    "img": "https://i.ibb.co/T2cpBd5/888.jpg",
-    "price": "20.00",
-    "description": "description",
-    "size": "hello",
-    "availability": ""
+    "title": "Single Room",
+    "description": "Our Single Room offers a cozy and comfortable retreat for solo travelers. Equipped with a comfortable bed, a small workspace, and a private bathroom, it's perfect for those seeking peace and solitude. Whether you're here for business or leisure, you'll find all the essentials you need for a pleasant stay. Enjoy the convenience of modern amenities and a peaceful atmosphere in this well-appointed room. Wake up refreshed and start your day in style. Book now to experience comfort and relaxation in our Single Room.",
+    "price_per_night": 100,
+    "room_size": "200 sq. ft",
+    "availability": 10,
+    "room_images": "https://i.ibb.co/JBMzBRf/single.jpg",
+    "booking_button": "Book Now"
   },
   {
     "id": "02",
-    "title": "Engine Oil Change",
-    "img": "https://i.ibb.co/T2cpBd5/888.jpg",
-    "price": "20.00",
-    "description": "description",
-    "size": "hello",
-    "availability": ""
+    "title": "Double Room",
+    "description": "Our Double Room is a spacious and welcoming choice for couples or friends traveling together. Featuring a large and comfortable bed, a seating area, and an en-suite bathroom, it's ideal for a relaxing and enjoyable stay. With its ample space and modern amenities, this room ensures you have a comfortable and memorable visit. Whether you're on a romantic getaway or a trip with a companion, our Double Room provides the perfect accommodation. Book now and enjoy a delightful stay in our Double Room.",
+    "price_per_night": 150,
+    "room_size": "300 sq. ft",
+    "availability": 8,
+    "room_images": "https://i.ibb.co/cy1kVSM/markus-spiske-g5-ZIXjz-RGds-unsplash.jpg",
+    "booking_button": "Book Now"
   },
   {
     "id": "03",
-    "title": "Engine Oil Change",
-    "img": "https://i.ibb.co/T2cpBd5/888.jpg",
-    "price": "20.00",
-    "description": "description",
-    "size": "hello",
-    "availability": ""
+    "title": "Deluxe Suite",
+    "description": "Luxurious suite with all amenities.",
+    "price_per_night": 250,
+    "room_size": "500 sq. ft",
+    "availability": 4,
+    "room_images": " https://i.ibb.co/ngq1ygk/delux.jpg",
+
+    "booking_button": "Book Now"
   },
   {
     "id": "04",
-    "title": "Engine Oil Change",
-    "img": "https://i.ibb.co/T2cpBd5/888.jpg",
-    "price": "20.00",
-    "description": "description",
-    "size": "hello",
-    "availability": ""
+    "title": "Family Room",
+    "description": "Perfect for a family getaway.",
+    "price_per_night": 200,
+    "room_size": "400 sq. ft",
+    "availability": 6,
+    "room_images": "https://i.ibb.co/CvJxHFN/family-room.jpg",
+    "booking_button": "Book Now"
   },
   {
     "id": "05",
-    "title": "Engine Oil Change",
-    "img": "https://i.ibb.co/T2cpBd5/888.jpg",
-    "price": "20.00",
-    "description": "description",
-    "size": "hello",
-    "availability": ""
+    "title": "Twin Room",
+    "description": "Two separate beds for friends or colleagues.",
+    "price_per_night": 120,
+    "room_size": "250 sq. ft",
+    "availability": 5,
+    "room_images": "https://i.ibb.co/bXqhtb7/twins.jpg",
+    "booking_button": "Book Now"
   },
   {
     "id": "06",
-    "title": "Engine Oil Change",
-    "img": "https://i.ibb.co/T2cpBd5/888.jpg",
-    "price": "20.00",
-    "description": "description",
-    "size": "hello",
-    "availability": ""
+    "title": "Executive Suite",
+    "description": "Elegance and comfort combined in a suite.",
+    "price_per_night": 300,
+    "room_size": "600 sq. ft",
+    "availability": 3,
+    "room_images": "https://i.ibb.co/VQGYhx0/executive-suites.jpg",
+    "booking_button": "Book Now"
   }
 ]
