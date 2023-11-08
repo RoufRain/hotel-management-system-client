@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../../assets/images/hotel-logo-design.gif";
 
 const navItems = (
   <>
@@ -43,7 +44,9 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <Link to="">{/* <img src={logo} alt="" /> */}</Link>
+        <Link to="">
+          <img src={logo} alt="" className="h-12 w-32 rounded-md" />
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
