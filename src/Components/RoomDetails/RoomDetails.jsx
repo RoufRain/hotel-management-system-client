@@ -17,7 +17,7 @@ const RoomDetails = () => {
       <div className=" bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <img src={room_images} className="w-1/2 rounded-lg shadow-2xl" />
-          <div className="w-1/2">
+          <div className="w-1/2 space-y-2">
             <h1 className="text-2xl font-bold">{title}</h1>
             <h1>
               <span className=" font-bold">Size: </span>
