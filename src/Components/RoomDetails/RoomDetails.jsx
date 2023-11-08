@@ -1,4 +1,6 @@
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { authContext } from "../../Provider/AuthProvider";
 
 const RoomDetails = () => {
   const rooms = useLoaderData();
@@ -11,6 +13,39 @@ const RoomDetails = () => {
     room_size,
     availability,
   } = rooms;
+
+  const { user } = useContext(authContext);
+
+  const [date, setDate] = useState();
+  console.log("date", date);
+
+  const handleBookRoom = () => {
+    const booking = {
+      id: _id,
+      title,
+      image: room_images,
+      price: price_per_night,
+      size: room_size,
+      availability,
+    };
+    console.log(booking);
+
+    //for sending to bookings (database)
+    fetch("http://localhost:5000/bookings", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          alert("service book successfully");
+        }
+      });
+  };
 
   return (
     <div>
@@ -32,7 +67,17 @@ const RoomDetails = () => {
             <p>
               <span className="font-bold">Price/night:</span> {price_per_night}
             </p>
-            <button className="bg-[#FF3811] font-semibold w-30 rounded-md p-2">
+            <p>
+              <span className="font-bold">Select Date:{date}</span>{" "}
+              <input
+                type="date"
+                onChange={(e) => setDate(e.target.value)}
+              ></input>
+            </p>
+            <button
+              onClick={handleBookRoom}
+              className="bg-[#FF3811] font-semibold w-30 rounded-md p-2"
+            >
               Booking Now!
             </button>
           </div>
