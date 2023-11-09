@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { authContext } from "../../Provider/AuthProvider";
 import BookingRow from "./BookingRow";
-// import swal from "sweetalert";
+
 import Swal from "sweetalert2";
-import { Result } from "postcss";
 
 const Bookings = () => {
   const { user } = useContext(authContext);
@@ -54,7 +53,9 @@ const Bookings = () => {
 
   return (
     <div>
-      <h2>your bookings: {bookings.length}</h2>
+      <h2 className="text-xl font-medium border w-44 p-2">
+        Your bookings: {bookings.length}
+      </h2>
 
       <div className="overflow-x-auto">
         <table className="table">
