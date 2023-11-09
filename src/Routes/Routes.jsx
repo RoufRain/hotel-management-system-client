@@ -5,6 +5,7 @@ import Rooms from "../Components/Home/Rooms";
 import RoomDetails from "../Components/RoomDetails/RoomDetails";
 import SignIn from "../Components/Shared/SignIn";
 import SignUp from "../Components/Shared/SignUp";
+import Bookings from "../Components/RoomDetails/Bookings";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         element: <RoomDetails> </RoomDetails>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/rooms/${params.id}`),
+      },
+      {
+        path: "/bookings",
+        element: <Bookings> </Bookings>,
       },
     ],
   },

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
+import moment from "moment";
 
 const RoomDetails = () => {
   const rooms = useLoaderData();
@@ -17,16 +18,19 @@ const RoomDetails = () => {
   const { user } = useContext(authContext);
 
   const [date, setDate] = useState();
-  console.log("date", date);
+  //   console.log("date", date);
 
   const handleBookRoom = () => {
+    const email = user?.email;
     const booking = {
       id: _id,
+      email,
       title,
       image: room_images,
       price: price_per_night,
       size: room_size,
       availability,
+      date,
     };
     console.log(booking);
 
@@ -68,7 +72,7 @@ const RoomDetails = () => {
               <span className="font-bold">Price/night:</span> {price_per_night}
             </p>
             <p>
-              <span className="font-bold">Select Date:{date}</span>{" "}
+              <span className="font-bold">Select Date:</span>{" "}
               <input
                 type="date"
                 onChange={(e) => setDate(e.target.value)}
