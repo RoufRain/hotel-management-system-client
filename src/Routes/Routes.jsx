@@ -7,6 +7,7 @@ import SignIn from "../Components/Shared/SignIn";
 import SignUp from "../Components/Shared/SignUp";
 import Bookings from "../Components/RoomDetails/Bookings";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import ContactUs from "../Components/Shared/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/rooms",
         element: <Rooms> </Rooms>,
+      },
+      {
+        path: "/contactUs",
+        element: <ContactUs> </ContactUs>,
       },
       {
         path: "/signin",
