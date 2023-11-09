@@ -17,6 +17,18 @@ const SignUp = () => {
 
     console.log(name, email, password);
 
+    //for valid password authentication
+    if (password.length < 6) {
+      swal("Password should not less than 6 characters");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      swal("Password should contain atleast one Capital letter");
+      return;
+    } else if (!/[@#$%^&*]/.test(password)) {
+      swal("Password should contain one Special character");
+      return;
+    }
+
     createUser(email, password)
       .then((result) => {
         const user = result.user;
