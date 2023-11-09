@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/images/hotel-logo-design.gif";
 import { useContext } from "react";
 import { authContext } from "../../Provider/AuthProvider";
+import { FaCircleUser } from "react-icons/fa6";
 
 const Navbar = () => {
   const { user, logOut } = useContext(authContext);
@@ -19,9 +20,6 @@ const Navbar = () => {
       <li>
         <Link to="/rooms">Rooms</Link>
       </li>
-      <li>
-        <Link to="/contactUs">Contact Us</Link>
-      </li>
 
       {user?.email ? (
         <li>
@@ -30,6 +28,10 @@ const Navbar = () => {
       ) : (
         <></>
       )}
+
+      <li>
+        <Link to="/contactUs">Contact Us</Link>
+      </li>
     </>
   );
 
@@ -68,11 +70,16 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
       {user?.email ? (
-        <div className="navbar-end">
-          <button className="btn btn-primary" onClick={handleLogOut}>
-            LogOut
-          </button>
-        </div>
+        <>
+          <div className="navbar-end space-x-1">
+            <span className="text-lg">{user.email}</span>
+            <span className="h-12 w-12 border rounded-full">{user.photo}</span>
+
+            <button className="btn btn-primary" onClick={handleLogOut}>
+              LogOut
+            </button>
+          </div>
+        </>
       ) : (
         <div className="navbar-end">
           <Link to="/signin">

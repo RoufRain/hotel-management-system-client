@@ -8,11 +8,13 @@ import SignUp from "../Components/Shared/SignUp";
 import Bookings from "../Components/RoomDetails/Bookings";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import ContactUs from "../Components/Shared/ContactUs";
+import ErrorPage from "../Components/Shared/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout> </MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

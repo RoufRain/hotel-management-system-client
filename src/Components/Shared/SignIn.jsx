@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logImage from "../../assets/images/login.svg";
 import { useContext } from "react";
 import { authContext } from "../../Provider/AuthProvider";
-import Swal from "sweetalert2";
+import swal from "sweetalert";
 import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
@@ -28,7 +28,7 @@ const SignIn = () => {
         const user = result.user;
         console.log(user);
         event.target.reset();
-        Swal.fire({
+        swal({
           title: "Success!",
           text: "Your Login Successful.",
           icon: "success",
@@ -36,7 +36,7 @@ const SignIn = () => {
       })
       .catch((error) => {
         console.log(error);
-        Swal("Credential Does Not Match!", "Error");
+        swal("Credential Does Not Match!", "Error");
       });
   };
 
