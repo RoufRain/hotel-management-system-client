@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import image from "../../assets/images/login.svg";
 import { authContext } from "../../Provider/AuthProvider";
+import swal from "sweetalert";
 
 const SignUp = () => {
   const { createUser } = useContext(authContext);
@@ -20,8 +21,12 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        swal("Registration Successful!", "Success");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        swal("Already Registered!", "Error");
+      });
   };
   return (
     <div className="hero min-h-screen bg-base-200">
