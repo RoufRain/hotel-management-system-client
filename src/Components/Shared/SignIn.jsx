@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import logImage from "../../assets/images/login.svg";
 import { useContext } from "react";
 import { authContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const SignIn = () => {
   const { signIn } = useContext(authContext);
@@ -18,9 +19,16 @@ const SignIn = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        event.target.reset();
+        Swal.fire({
+          title: "Success!",
+          text: "Your Login Successful.",
+          icon: "success",
+        });
       })
       .catch((error) => {
         console.log(error);
+        Swal("Credential Does Not Match!", "Error");
       });
   };
 
