@@ -1,6 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { authContext } from "../../Provider/AuthProvider";
 import BookingRow from "./BookingRow";
+// import swal from "sweetalert";
+import Swal from "sweetalert2";
+import { Result } from "postcss";
 
 const Bookings = () => {
   const { user } = useContext(authContext);
@@ -16,22 +19,37 @@ const Bookings = () => {
 
   //for cancel or delete
   const handleCancel = (id) => {
-    const proceed = confirm("are you sure you want to delete!");
-    if (proceed) {
-      fetch(`http://localhost:5000/bookings/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          //after create delete fuction
-          if (data.deletedCount > 0) {
-            alert("deleted successfully");
-            const remaining = bookings.filter((booking) => booking._id !== id);
-            setBookings(remaining);
-          }
-        });
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/bookings/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            //after create delete fuction
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+              const remaining = bookings.filter(
+                (booking) => booking._id !== id
+              );
+              setBookings(remaining);
+            }
+          });
+      }
+    });
   };
 
   return (

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
-import moment from "moment";
+import Swal from "sweetalert2";
 
 const RoomDetails = () => {
   const rooms = useLoaderData();
@@ -34,21 +34,38 @@ const RoomDetails = () => {
     };
     console.log(booking);
 
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to booking room!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch("http://localhost:5000/bookings", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(booking),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.insertedId) {
+              Swal.fire({
+                title: "Booked!",
+                text: "Your room has been Booked.",
+                icon: "success",
+              });
+            }
+          });
+      }
+    });
+
     //for sending to bookings (database)
-    fetch("http://localhost:5000/bookings", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(booking),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          alert("service book successfully");
-        }
-      });
   };
 
   return (
