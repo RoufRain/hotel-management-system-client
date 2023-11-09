@@ -62,6 +62,13 @@ const BookingRow = ({ booking, handleCancel }) => {
           </button>
         </label>
       </th>
+      <td>
+        <span>
+          <button className="bg-[#d7cfcd] font-semibold w-30 rounded-md p-1">
+            Review
+          </button>
+        </span>
+      </td>
     </tr>
   );
 };

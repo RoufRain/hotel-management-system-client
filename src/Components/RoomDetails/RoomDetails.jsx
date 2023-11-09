@@ -105,7 +105,7 @@ const RoomDetails = () => {
         </div>
       </div>
 
-      <div className="mt-5">
+      <div className="mt-5 mb-5 border p-2">
         <p className="text-2xl font-semibold">Review: 0</p>
       </div>
     </div>

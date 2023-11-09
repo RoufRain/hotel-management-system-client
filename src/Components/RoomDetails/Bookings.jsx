@@ -69,6 +69,7 @@ const Bookings = () => {
               <th>$Price</th>
               <th>Date</th>
               <th>Status</th>
+              <th>Review</th>
             </tr>
           </thead>
           <tbody>

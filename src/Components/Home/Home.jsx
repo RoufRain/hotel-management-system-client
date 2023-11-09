@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import FeaturedRoom from "./FeaturedRoom";
 import Offer from "./Offer";
 import Rooms from "./Rooms";
 import UserTestimonial from "./UserTestimonial";
@@ -10,6 +11,7 @@ const Home = () => {
       <Rooms> </Rooms>
       <Offer> </Offer>
       <UserTestimonial> </UserTestimonial>
+      <FeaturedRoom> </FeaturedRoom>
     </div>
   );
 };
