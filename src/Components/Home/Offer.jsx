@@ -8,7 +8,11 @@ const Offer = () => {
       </div>
 
       <div className="hero  bg-base-200 mb-5 ">
-        <div className="hero-content flex-col lg:flex-row">
+        <div
+          className="hero-content flex-col lg:flex-row"
+          data-aos="zoom-in-up"
+          data-aos-duration="2000"
+        >
           <img src={offer_image} className="max-w-sm rounded-lg shadow-2xl" />
           <div className="w-1/2">
             <h1 className="text-5xl font-bold">Get 50% OFF!</h1>

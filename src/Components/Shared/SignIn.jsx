@@ -3,9 +3,17 @@ import logImage from "../../assets/images/login.svg";
 import { useContext } from "react";
 import { authContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { FcGoogle } from "react-icons/fc";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/firebase.config";
 
 const SignIn = () => {
   const { signIn } = useContext(authContext);
+
+  //for google sign in
+  const auth = getAuth(app);
+  console.log(app);
+  const provider = new GoogleAuthProvider();
 
   const signInHandle = (event) => {
     event.preventDefault();
@@ -29,6 +37,18 @@ const SignIn = () => {
       .catch((error) => {
         console.log(error);
         Swal("Credential Does Not Match!", "Error");
+      });
+  };
+
+  //signin wiht google
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -79,6 +99,15 @@ const SignIn = () => {
               />
             </div>
           </form>
+
+          <div className="flex justify-center">
+            <button
+              onClick={handleGoogleSignIn}
+              className="flex justify-center items-center p-1 text-md font-semibold bg-zinc-100 rounded-md border w-28"
+            >
+              <FcGoogle className="h-6 w-6"></FcGoogle>LOGIN
+            </button>
+          </div>
           <div>
             <p className="text-[#737373] font-semibold text-center mb-4">
               New to Here?{" "}

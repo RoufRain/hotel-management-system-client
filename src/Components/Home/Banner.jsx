@@ -12,7 +12,12 @@ const Banner = () => {
       />
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-md">
+        <div
+          className="max-w-md"
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+        >
           <h1 className="mb-5 text-5xl font-bold">
             {" "}
             Affordable Price For Room Servicing!
